@@ -1,0 +1,12 @@
+{
+    "commands": [
+        {
+            "endpoint": "docker-ps",
+            "cmd": "docker ps"
+        },
+        {
+            "endpoint": "hello",
+            "cmd": "echo 'hello world'"
+        }
+    ]
+}
