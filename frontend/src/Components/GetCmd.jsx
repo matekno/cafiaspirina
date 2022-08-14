@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import ExecInServer from '../Helpers/RunCmds';
+import './GetCmd.css'
 
 
 const ButtonExecCmd = ({ cmd }) => {
+    //TODO: falta agregar algo de estilos, posibilidad de pametros.
     const [data, setData] = useState({ data: [] });
     const [isLoading, setIsLoading] = useState(false);
     const [err, setErr] = useState('');
@@ -24,7 +26,7 @@ const ButtonExecCmd = ({ cmd }) => {
     }
 
     return (
-        <div>
+        <div className='container'>
             {err && <h2>{err}</h2>}
             {console.log(data)}
             <button onClick={handleClick}>Fetch data</button>

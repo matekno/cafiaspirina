@@ -1,27 +1,17 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import ButtonExecCmd from './Components/GetCmd'
-
+import cmds from '../../cmd.json'
 
 function App() {
-  // const [output, setOutput] = useState();
-  // useEffect(() => {
-  //   (async () => {
-  //     const output = await ExecInServer("hello");
-  //     console.log(output);
-  //     setOutput(output);
-  //   })();
-  // }, []);
-
-  // return (
-  //   <div className="App">
-  //     <p>{`OUTPUT: ${output}`}</p>
-  //   </div>
-  // )
-
   return (
-    <ButtonExecCmd cmd="docker-ps" />
-  )
-}
+    <>
+      {cmds.commands.map((cmd) => {
+        return (
+          <ButtonExecCmd cmd={cmd.endpoint} />
+        )
+      })}
+    </>
+  );
 
-export default App
+} export default App
