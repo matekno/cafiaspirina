@@ -8,7 +8,7 @@ const ExecInServer = async (endpoint) => {
             password: "1234"
         }
     });
-    return data.data;
+    return data;
 }
 
 export default ExecInServer;
