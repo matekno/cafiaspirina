@@ -7,6 +7,10 @@
         {
             "endpoint": "hello",
             "cmd": "echo 'hello world'"
+        },
+        {
+            "endpoint": "chau",
+            "cmd": "echo 'chau world'"
         }
     ]
 }
