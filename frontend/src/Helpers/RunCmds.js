@@ -1,11 +1,13 @@
 import axios from 'axios';
 const url = "http://localhost:3000"
 
-const ExecInServer = async (endpoint) => {
+const ExecInServer = async (endpoint, username, password) => {
+
+
     const data = await axios.get(`${url}/${endpoint}`, {
         auth: {
-            username: "admin",
-            password: "1234"
+            username: username,
+            password: password
         }
     });
     return data;
