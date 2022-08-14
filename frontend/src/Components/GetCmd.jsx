@@ -3,7 +3,7 @@ import ExecInServer from '../Helpers/RunCmds';
 import './GetCmd.css'
 
 
-const ButtonExecCmd = ({ cmd }) => {
+const ButtonExecCmd = ({ cmd, username, password }) => {
     //TODO: falta agregar algo de estilos, posibilidad de pametros.
     const [data, setData] = useState({ data: [] });
     const [isLoading, setIsLoading] = useState(false);
@@ -12,8 +12,9 @@ const ButtonExecCmd = ({ cmd }) => {
     const handleClick = async () => {
         setIsLoading(true);
         try {
-            const data = await ExecInServer(cmd);
-            console.log(data);
+            console.log(username);
+            console.log(password);
+            const data = await ExecInServer(cmd, username, password);
             if (data.status !== 200) {
                 throw new Error("TODO MAL");
             }
@@ -28,9 +29,8 @@ const ButtonExecCmd = ({ cmd }) => {
     return (
         <div className='container'>
             {err && <h2>{err}</h2>}
-            {console.log(data)}
-            <button onClick={handleClick}>Fetch data</button>
-            {isLoading && <h2>Loading...</h2>}
+            <button onClick={handleClick}>{`${cmd}`}</button>
+            {isLoading && <h2>Cargando...</h2>}
             <h2>{data.data}</h2>
         </div>
     );
