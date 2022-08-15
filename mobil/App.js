@@ -1,12 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import ButtonExecCmd from './components/GetCmd';
+import cmds from './cmd.json'; // no anda el cmd.json gral
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <ButtonExecCmd cmd="docker-ps" username="admin" password="1234" />
+      {
+        cmds.commands.map((cmd) => {
+          return (
+            <ButtonExecCmd cmd={cmd.endpoint} username="admin" password="1234" />
+          )
+        })
+      }
       <StatusBar style="auto" />
     </View>
   );

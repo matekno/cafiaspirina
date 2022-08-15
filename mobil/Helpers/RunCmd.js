@@ -1,5 +1,5 @@
 import axios from 'axios';
-import base64 from 'base-64'
+import base64 from 'base-64';
 
 const url = "http://192.168.56.1:3000"
 
