@@ -9,7 +9,7 @@ export default function App() {
       {
         cmds.commands.map((cmd) => {
           return (
-            <ButtonExecCmd cmd={cmd.endpoint} username="admin" password="1234" />
+            <ButtonExecCmd cmd={cmd.endpoint} username="admin" password="1234" title={cmd.endpoint} />
           )
         })
       }

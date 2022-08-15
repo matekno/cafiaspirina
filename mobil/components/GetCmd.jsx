@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import ExecInServer from '../Helpers/RunCmd';
 
 
-const ButtonExecCmd = ({ cmd, username, password }) => {
+const ButtonExecCmd = ({ cmd, username, password, title }) => {
     //TODO: falta agregar algo de estilos, posibilidad de pametros.
     const [data, setData] = useState({ data: [] });
     const [isLoading, setIsLoading] = useState(false);
@@ -28,7 +28,7 @@ const ButtonExecCmd = ({ cmd, username, password }) => {
     return (
         <View className='container'>
             {err && <Text>{err}</Text>}
-            <Button onPress={handleClick} title="cmd" />
+            <Button onPress={handleClick} title={title} />
             {isLoading && <Text>Cargando...</Text>}
             <Text>{data.data}</Text>
         </View>
